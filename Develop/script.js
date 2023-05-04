@@ -1,5 +1,5 @@
 //Array - special characters
-var specialCharacters = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '[', '}', '}', '|', ':', ';', '"', '<', ',', '>', '.', '?', '/', '\\', "'",];
+var specialCharacters = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '[', '}', '}', '|', ':', ';', '"', '<', ',', '>', '.', '?', '/', "'",];
 
 // Array - numerical characters
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',];
@@ -9,6 +9,9 @@ var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'
 
 //Array - uppercase
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',];
+
+//what user selected confirm to from options
+var userSelection = []
 
 // function - get password options
 function getPasswordOptions() {
@@ -50,26 +53,70 @@ function getPasswordOptions() {
     ('Would you like your password to contain numbers?');
 
 
-  if (includeNumbers ===false && includeUpperCaseCharacters ===false && includeLowerCaseCharacters ===false && includeSpecialCharacters ===false) {
+  if (includeNumbers === false && includeUpperCaseCharacters === false && includeLowerCaseCharacters === false && includeSpecialCharacters === false) {
     alert(' Must select at least one password criteria.');
   }
+
+  // if condition is true (selected yes to prompt), then reassign the variable userSelection 
+  if (includeNumbers === true) {
+    userSelection = userSelection + numbers
+    // console.log("includeNumbers",userSelection)
+  }
+
+  if (includeUpperCaseCharacters === true) {
+    userSelection = userSelection + upperCase
+    // console.log("includeUpperCaseCharacters",userSelection)
+  }
+
+  if (includeLowerCaseCharacters === true) {
+    userSelection = userSelection + lowerCase
+    // console.log("includeLowerCaseCharacters",userSelection)
+  }
+
+  if (includeSpecialCharacters === true) {
+    userSelection = userSelection + specialCharacters
+    // console.log("includeSpecialCharacters",userSelection)
+  }
+
+  var finalPassword = ""
+
+  for (var i = 0; i < length; i++) {
+    
+    var random = Math.floor(Math.random() * length)
+    console.log(userSelection[random])
+    finalPassword = finalPassword + userSelection[random]
+    
+  }
+
 }
 
-function getRandom(arr){
-  
+//get random index from options selected
+function getRandom() {
+
+
+
+
+  // var randomNumbers = numbers[index];
+  // var randomSpecialCharacters = specialCharacters[index];
+  // var randomLowerCase = lowerCase[index];
+  // var randomUpperCase = upperCase[index];
+
+
+
+
 }
 
 // Assignment Code
-// var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-//function writePassword() {
- // var password = generatePassword();
-  //var passwordText = document.querySelector("#password");
+function writePassword() {
+  // var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  console.log("write password function")
+  passwordText.value = password;
 
-  //passwordText.value = password;
-
-//}
+}
 
 // Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
