@@ -5,12 +5,11 @@ var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "1234567890";
 var specialCharacters = "!@#$%^&*()_+";
 
-//what user selected confirm to from options
-var userSelection = []
-
 // function - get password options
 function getPasswordOptions(e) {
   e.preventDefault();
+  //what user selected confirm to from options
+  var userSelection = [];
   var userChoice = window.prompt("How many characters would like your password to contain?");
   //If user pressed Cancel, immediately end function
   if (!userChoice) {
