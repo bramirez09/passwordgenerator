@@ -55,27 +55,28 @@ function getPasswordOptions() {
 
   if (includeNumbers === false && includeUpperCaseCharacters === false && includeLowerCaseCharacters === false && includeSpecialCharacters === false) {
     alert(' Must select at least one password criteria.');
+    return;
   }
 
   // if condition is true (selected yes to prompt), then reassign the variable userSelection 
   if (includeNumbers === true) {
     userSelection = userSelection + numbers
-    // console.log("includeNumbers",userSelection)
+     console.log("includeNumbers",userSelection)
   }
 
   if (includeUpperCaseCharacters === true) {
     userSelection = userSelection + upperCase
-    // console.log("includeUpperCaseCharacters",userSelection)
+     console.log("includeUpperCaseCharacters",userSelection)
   }
 
   if (includeLowerCaseCharacters === true) {
     userSelection = userSelection + lowerCase
-    // console.log("includeLowerCaseCharacters",userSelection)
+    console.log("includeLowerCaseCharacters",userSelection)
   }
 
   if (includeSpecialCharacters === true) {
     userSelection = userSelection + specialCharacters
-    // console.log("includeSpecialCharacters",userSelection)
+     console.log("includeSpecialCharacters",userSelection)
   }
 
   var finalPassword = ""
@@ -85,35 +86,26 @@ function getPasswordOptions() {
     var random = Math.floor(Math.random() * length)
     console.log(userSelection[random])
     finalPassword = finalPassword + userSelection[random]
+    console.log ("finalPassword", finalPassword)
     
+    return finalPassword
   }
 
-}
-
-//get random index from options selected
-function getRandom() {
-
-
-
-
-  // var randomNumbers = numbers[index];
-  // var randomSpecialCharacters = specialCharacters[index];
-  // var randomLowerCase = lowerCase[index];
-  // var randomUpperCase = upperCase[index];
-
-
-
 
 }
 
+function generatePassword() {
+  var finalPassword = getPasswordOptions() ;
+
+}
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  // var password = generatePassword();
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  console.log("write password function")
+
   passwordText.value = password;
 
 }
