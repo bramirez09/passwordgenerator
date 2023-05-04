@@ -1,14 +1,9 @@
-//Array - special characters
-var specialCharacters = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '[', '}', '}', '|', ':', ';', '"', '<', ',', '>', '.', '?', '/', "'",];
+//Arrays 
 
-// Array - numerical characters
-var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',];
-
-// Array - lowercase
-var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',];
-
-//Array - uppercase
-var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',];
+var lowerCase = "abcdefghjiklmnopqrstuvwxyz";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "1234567890";
+var specialCharacters = "!@#$%^&*()_+";
 
 //what user selected confirm to from options
 var userSelection = []
