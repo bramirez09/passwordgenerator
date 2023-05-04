@@ -84,7 +84,7 @@ function getPasswordOptions(e) {
 
   for (var i = 0; i < length; i++) {
 
-    var random = Math.floor(Math.random() * length)
+    var random = Math.floor(Math.random() * userSelection.length)
     console.log(userSelection[random])
     finalPassword = finalPassword + userSelection[random]
   }
